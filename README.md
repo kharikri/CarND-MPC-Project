@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the fifth project in the second term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented an MPC controller to maneuver a vehicle around a simulated track. [Model predictive controllers](https://en.wikipedia.org/wiki/Model_predictive_control) (MPC) rely on dynamic models of the process. The main advantage of MPC is the fact that it allows the current timeslot to be optimized, while keeping future timeslots in account. MPC has the ability to anticipate future events and can take control actions accordingly.
+This is the fifth project in the second term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented an MPC controller to maneuver a vehicle around a simulated track. [Model predictive controllers](https://en.wikipedia.org/wiki/Model_predictive_control) (MPC) rely on dynamic models of the process. The main advantage of MPC is the fact that it allows the current timeslot to be optimized, while keeping future timeslots in account. MPC can anticipate future events and can take control actions accordingly.
 
 ## The Model
 
@@ -12,19 +12,19 @@ I use the kinematic model covered in the course. The current state has x and y c
 
 *Lf* is a constant based on the turning radius of the car and *dt* is the time difference between the state at *t+1* and at *t*. 
 
-There are also two error components *cte* and *eψ*. The *cte* is the cross-track-error or the distance from the center of the car to the center of the road. The *eψ* is the difference between the calculated angle of the road and the heading. Both of these are calculated by comparing the car's actual location and heading with that predicted by the fitted polynomial of the road waypoints, in the following way:
+There are also two error components *cte* and *eψ*. The *cte* is the cross-track-error or the distance from the center of the car to the center of the road. The *eψ* is the difference between the calculated angle of the road and the heading. Both are calculated by comparing the car's actual location and heading with that predicted by the fitted polynomial of the road waypoints, in the following way:
 
 ![alt text](https://github.com/kharikri/CarND-MPC-Project/blob/master/equations/StateEq2.png)
 
 ## Timestep Length and Elapsed Duration (N & dt)
 
-The timestep length *N* is how many states we *lookahead* in the future and the timestep frequency *dt* is how much time elapses between actuations. The values chosen for *N* and *dt* are 10 and 0.1 respectively. These values were recommended in the tutorial. A smaller *N* does not take advantage of the lookahead aspect of the algorithm and the ride is erractic. A large *N* was computationally expensive. *N* equal to 10 and *dt* equal to 0.1 was the best option to keep the vehicle on the track in my experiments.
+The timestep length *N* is how many states we *lookahead* in the future and the timestep frequency *dt* is how much time elapses between actuations. The values chosen for *N* and *dt* are 10 and 0.1 respectively. These values were recommended in the tutorial. A smaller *N* does not take advantage of the lookahead aspect of the algorithm and the ride is erratic. A large *N* was computationally expensive. *N* equal to 10 and *dt* equal to 0.1 was the best option to keep the vehicle on the track in my experiments.
 
 ## Polynomial Fitting and MPC Preprocessing
 
 The waypoints are transformed from map to the vehicle's space. After doing this, the waypoints are in reference to the vehicle and its  x and y coordinates are at the origin (0, 0) and the orientation angle is also zero.
 
-I then fit these transformed waypoints with a third degree polynomial.
+I then fit these transformed waypoints with a third-degree polynomial.
 
 ## Model Predictive Control with Latency
 
