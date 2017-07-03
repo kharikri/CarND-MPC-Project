@@ -18,7 +18,7 @@ There are also two error components *cte* and *eψ*. The *cte* is the cross-trac
 
 ## Timestep Length and Elapsed Duration (N & dt)
 
-The timestep length *N* is how many states we *lookahead* in the future and the time step frequency *dt* is how much time elapses between actuations. The values chosen for *N* and *dt* are 10 and 0.1 respectively. These values were recommended in the tutorial. A smaller *N* does not take advantage of the lookahead aspect of the algorithm and the ride is erractic. A large *N* was computationally expensive. *N* equal to 10 and *dt* equal to 0.1 was the best option to keep the vehicle on the track.
+The timestep length *N* is how many states we *lookahead* in the future and the timestep frequency *dt* is how much time elapses between actuations. The values chosen for *N* and *dt* are 10 and 0.1 respectively. These values were recommended in the tutorial. A smaller *N* does not take advantage of the lookahead aspect of the algorithm and the ride is erractic. A large *N* was computationally expensive. *N* equal to 10 and *dt* equal to 0.1 was the best option to keep the vehicle on the track in my experiments.
 
 ## Polynomial Fitting and MPC Preprocessing
 
