@@ -18,7 +18,7 @@ There are also two error components, eψ and cte. The eψ is the difference betw
 
 ## Timestep Length and Elapsed Duration (N & dt)
 
-The timestep length N is how many states we *lookahead* in the future and the time step frequency dt is how much time elapses between actuations. The values chosen for N and dt are 10 and 0.1 respectively. These values were recommended in the tutorial. A smaller N does not take advantage of the look-ahead aspect of the algorithm and the ride is erractic. A large N was computationally expensive. N equal to 10 was the best option.
+The timestep length N is how many states we *lookahead* in the future and the time step frequency dt is how much time elapses between actuations. The values chosen for N and dt are 10 and 0.1 respectively. These values were recommended in the tutorial. A smaller N does not take advantage of the look-ahead aspect of the algorithm and the ride is erractic. A large N was computationally expensive. N equal to 10 and dt eqial to 0.1 was the best option to keep the vehicle on the track.
 
 ## Polynomial Fitting and MPC Preprocessing
 
