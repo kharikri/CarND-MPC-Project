@@ -10,9 +10,9 @@ I use the kinematic model covered in the course. The current state has x and y c
 
 ![alt text](https://github.com/kharikri/CarND-MPC-Project/blob/master/equations/StateEq1.png)
 
-Lf is a constant based on the turning radius of the car and dt is the time difference between the state at t+1 and at t. 
+*Lf* is a constant based on the turning radius of the car and *dt* is the time difference between the state at *t+1* and at *t*. 
 
-There are also two error components, eψ and cte. The eψ is the difference between the calculated angle of the road and the heading. The cte, is the cross-track-error, or the distance from the center of the car to the center of the road. Both of these are calculated by comparing the car's actual location and heading with that predicted by the fitted polynomial of the road waypoints, in the following way:
+There are also two error components *cte* and *eψ*. The *cte* is the cross-track-error or the distance from the center of the car to the center of the road. The *eψ* is the difference between the calculated angle of the road and the heading. Both of these are calculated by comparing the car's actual location and heading with that predicted by the fitted polynomial of the road waypoints, in the following way:
 
 ![alt text](https://github.com/kharikri/CarND-MPC-Project/blob/master/equations/StateEq2.png)
 
