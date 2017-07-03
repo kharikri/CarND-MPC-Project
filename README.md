@@ -6,7 +6,7 @@ This is the fifth project in the second term of the Self Driving Car Nanodegree 
 
 ## The Model
 
-I use the kinematic model covered in the course. The current state has x and y coordinates, velocity, and heading direction (x, y, v, ψ) of the vehicle. It also has actuator values, acceleration (a) and change in heading (δ). The state is updated using standard motion equations shown below:
+I use the kinematic model covered in the course. The current state has x and y coordinates, velocity, and heading direction (x, y, v, ψ) of the vehicle. It also has actuator values acceleration (a) and change in heading (δ). The state is updated using standard motion equations shown below:
 
 ![alt text](https://github.com/kharikri/CarND-MPC-Project/blob/master/equations/StateEq1.png)
 
