@@ -99,17 +99,12 @@ int main() {
           *
           */
 
-          //vector<double> waypoints_x;
-          //vector<double> waypoints_y;
-
           // transform waypoints to be from car's perspective
           // this means we can consider px = 0, py = 0, and psi = 0
           // greatly simplifying future calculations
           for (int i = 0; i < ptsx.size(); i++) {
             double shift_x = ptsx[i] - px;
             double shift_y = ptsy[i] - py;
-            //waypoints_x.push_back(shift_x * cos(-psi) - shift_y * sin(-psi));
-            //waypoints_y.push_back(shift_x * sin(-psi) + shift_y * cos(-psi));
             ptsx[i] = (shift_x * cos(0-psi) - shift_y * sin(0-psi));
             ptsy[i] = (shift_x * sin(0-psi) + shift_y * cos(0-psi));
 
