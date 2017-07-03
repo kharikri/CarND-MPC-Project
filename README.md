@@ -1,5 +1,21 @@
-# CarND-Controls-MPC
-Self-Driving Car Engineer Nanodegree Program
+# MPC Controller
+
+## Introduction
+
+This is the fifth project in the second term of the Self Driving Car Nanodegree course offered by Udacity. In this project, I implemented an MPC controller to maneuver a vehicle around a simulated track. [Model predictive controllers](https://en.wikipedia.org/wiki/Model_predictive_control) (MPC) rely on dynamic models of the process. The main advantage of MPC is the fact that it allows the current timeslot to be optimized, while keeping future timeslots in account. MPC has the ability to anticipate future events and can take control actions accordingly.
+
+## The Model Description
+
+I use the kinematic model covered in the course. The current state has x and y coordinates, velocity, and heading direction (x, y, v, ψ) of the vehicle. It also has actuator values, acceleration (a) and change in heading (δ). The state is updated using standard motion equations shown below:
+
+![alt text](https://github.com/kharikri/CarND-MPC-Project/blob/master/equations/StateEq1.png)
+
+Lf is a constant based on the turning radius of the car. 
+
+There are also two error components, eψ and cte. The eψ is the difference between the calculated angle of the road and the heading. The cte, is the cross-track-error, or the distance from the center of the car to the center of the road. Both of these are calculated by comparing the car's actual location and heading with that predicted by the fitted polynomial of the road waypoints, in the following way:
+
+
+![alt text](https://github.com/kharikri/CarND-MPC-Project/blob/master/equations/StateEq2.png)
 
 ---
 
